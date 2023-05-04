@@ -1,12 +1,14 @@
 import React from "react";
-import Hero from "../components/Hero";
+import Corner from "../components/Corner";
 import FetchData from "../components/FetchData";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
     <div>
-      <Hero />
+      <Corner />
       <FetchData />
+      <Footer />
     </div>
   );
 };
