@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import FetchData from "./components/FetchData";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/sports" element={<FetchData cat="sports" />} />
           <Route path="/technology" element={<FetchData cat="technology" />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Categories = ({ cat }) => {
-  return <div>{cat}</div>;
+  return <div style={{ minweight: "400vh" }}>{cat}</div>;
 };
 
 export default Categories;

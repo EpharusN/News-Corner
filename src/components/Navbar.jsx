@@ -8,7 +8,7 @@ const Navbar = ({ handleSearch }) => {
     const res = await fetch(
       query
         ? `https://newsapi.org/v2/everything?q=${query}&apiKey=9ef88bce29e74a56b0ca5d55be78d17b`
-        : "https://newsapi.org/v2/top-headlines?country=us&apiKey=9ef88bce29e74a56b0ca5d55be78d17b"
+        : `https://newsapi.org/v2/top-headlines?country=${country}s&apiKey=9ef88bce29e74a56b0ca5d55be78d17b`
     );
     const json = await res.json();
     handleSearch(json.articles);
