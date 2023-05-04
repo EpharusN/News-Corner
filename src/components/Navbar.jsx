@@ -20,7 +20,7 @@ const Navbar = ({ handleSearch }) => {
       <nav className="navbar navbar-expand-lg bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand text-white" to="/">
-            <h4>News Corner</h4>
+            <h6 style={{ fontSize: "30px", color: "blue" }}>News Corner</h6>
           </Link>
           <button
             className="navbar-toggler"

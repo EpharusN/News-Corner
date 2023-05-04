@@ -17,9 +17,9 @@ const FetchData = ({ cat }) => {
     fetchData();
   }, [cat]);
   return (
-    <div className="container my-4">
+    <div className="container my-4 ">
       <h3>
-        <u>TOP HEADLINE</u>
+        <u style={{ color: "red" }}>TOP HEADLINES</u>
       </h3>
       <div
         className="container d-flex justify-content-center align-items-center flex-column my-3"
@@ -28,26 +28,32 @@ const FetchData = ({ cat }) => {
         {Data
           ? Data.map((items, index) => (
               <div
-                className="container my-3"
+                className="container my-3 p-3"
                 key={index}
-                style={{ width: "600px" }}
+                style={{
+                  width: "600px",
+                  boxShadow: "2px 2px 10px silver",
+                  borderRadius: "10px",
+                }}
               >
-                <h5>{items.title}</h5>
-                <img
-                  src={items.urlToImage}
-                  alt="/"
-                  className="img-fluid"
-                  style={{
-                    width: "auto",
-                    height: "300px",
-                    objectFit: "cover",
-                  }}
-                />
-                <p>{items.description}</p>
+                <h5 className="my-2">{items.title}</h5>
+                <div className="d-flex justify-content-center align-items-center ">
+                  <img
+                    src={items.urlToImage}
+                    alt="image not found"
+                    style={{
+                      width: "100%",
+                      height: "300px",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+
+                <p className="my-1">{items.description}</p>
                 <Link to={items.url} target="_blank">
                   View More
                 </Link>
-                <p>{items.author}</p>
+                <p className="my-1">{items.author}</p>
               </div>
             ))
           : "LOADING..."}

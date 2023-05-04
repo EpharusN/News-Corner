@@ -6,16 +6,10 @@ import FetchData from "./components/FetchData";
 import Footer from "./components/Footer";
 
 const App = () => {
-  const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearch = (results) => {
-    setSearchResults(results);
-  };
-
   return (
     <>
       <Router>
-        <Navbar handleSearch={handleSearch} />
+        <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/general" element={<FetchData cat="general" />} />
