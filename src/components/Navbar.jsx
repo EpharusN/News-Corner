@@ -1,20 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ handleSearch }) => {
-  const [query, setQuery] = useState("");
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const res = await fetch(
-      query
-        ? `https://newsapi.org/v2/everything?q=${query}&apiKey=9ef88bce29e74a56b0ca5d55be78d17b`
-        : `https://newsapi.org/v2/top-headlines?country=${country}s&apiKey=9ef88bce29e74a56b0ca5d55be78d17b`
-    );
-    const json = await res.json();
-    handleSearch(json.articles);
-    setQuery("");
-  };
-
+const Navbar = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-dark">
@@ -106,21 +93,6 @@ const Navbar = ({ handleSearch }) => {
                 >
                   Technology
                 </Link>
-              </li>
-              <li className="nav-item">
-                <form className="d-flex" onSubmit={handleSubmit}>
-                  <input
-                    className="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                  />
-                  <button className="btn btn-outline-success" type="submit">
-                    Search
-                  </button>
-                </form>
               </li>
             </ul>
           </div>

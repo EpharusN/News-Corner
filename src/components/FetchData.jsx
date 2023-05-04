@@ -8,7 +8,7 @@ const FetchData = ({ cat }) => {
     const fetchData = async () => {
       const res = await fetch(
         cat
-          ? `https://newsapi.org/v2/top-headlines?&category=${cat}&apiKey=9ef88bce29e74a56b0ca5d55be78d17b`
+          ? `https://newsapi.org/v2/top-headlines?country=us&category=${cat}&apiKey=9ef88bce29e74a56b0ca5d55be78d17b`
           : "https://newsapi.org/v2/top-headlines?country=us&apiKey=9ef88bce29e74a56b0ca5d55be78d17b"
       );
       const json = await res.json();
